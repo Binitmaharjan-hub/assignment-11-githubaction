@@ -10,8 +10,7 @@ def ensure_users_table():
     try:
         with conn.cursor() as cursor:
             cursor.execute(
-                """
-                CREATE TABLE IF NOT EXISTS users (
+                """CREATE TABLE IF NOT EXISTS users (
                     id INT AUTO_INCREMENT PRIMARY KEY,
                     name VARCHAR(500) NOT NULL
                 )
