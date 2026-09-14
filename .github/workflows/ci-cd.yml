@@ -55,7 +55,7 @@ jobs:
   build:
     needs: [test-frontend, test-backend]
     runs-on: self-hosted
-    environment: test
+    # environment: test
     steps:
       - name: checkout
         uses: actions/checkout@v4
