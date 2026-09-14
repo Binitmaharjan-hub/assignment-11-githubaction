@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock, patch
 import pytest
-from app import app
+from app import app, ensure_users_table
 
 @pytest.fixture
 def client():
@@ -27,7 +27,7 @@ def test_ensure_users_table_exists(mock_get_db):
     mock_conn.cursor.return_value.__enter__.return_value = mock_cursor
     mock_get_db.return_value = mock_conn
 
-    app.ensure_users_table()
+    ensure_users_table()
 
     assert any(
         call_args[0][0].startswith('CREATE TABLE IF NOT EXISTS users')
