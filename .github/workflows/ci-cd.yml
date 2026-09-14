@@ -49,7 +49,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: run tests
-        run: pytest -v
+        run: PYTHONPATH="$PWD" pytest -v
   
   build:
     needs: [test-frontend, test-backend]
